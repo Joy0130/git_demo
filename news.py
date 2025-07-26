@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import json
-url = "https://api.cnyes.com/media/api/v1/newslist/category/headline" #新聞網址
+url = "https://api.cnyes.com/media/api/v1/newslist/category/headline"
 payload = {
     "page":2,
     "itCategoryHeadline":1,
