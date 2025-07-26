@@ -1,13 +1,14 @@
 import requests
 import pandas as pd
+import datetime as dt
 import json
 url = "https://api.cnyes.com/media/api/v1/newslist/category/headline"
 payload = {
     "page":2,
     "itCategoryHeadline":1,
     "limit":30,
-    "startAt":1752645067,
-    "endAt":1753509067
+    "startAt":int((dt.datetime.today()- dt.timedelta(days=11)).timestamp()),
+    "endAt":int(dt.datetime.today().timestamp())
 }
 res = requests.get(url,params = payload)
 jd = json.loads(res.text)
