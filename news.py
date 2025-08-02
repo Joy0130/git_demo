@@ -26,4 +26,5 @@ df = pd.DataFrame(jd['items']['data'])
 df = df[['newsId','title','summary']]
 df['link'] = df['newsId'].apply(lambda x: 'https://m.cnyes.com/news/id/' + str(x))
 df.to_csv('news.csv', encoding = 'utf-8-sig')
+df.to_excel('news.xlsx')
 print(df)
