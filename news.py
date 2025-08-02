@@ -25,5 +25,6 @@ for i in range(2,jd['items']['last_page'] +1):
 df = pd.DataFrame(jd['items']['data'])
 df = df[['newsId','title','summary']]
 df['link'] = df['newsId'].apply(lambda x: 'https://m.cnyes.com/news/id/' + str(x))
-df.to_csv('news.csv', encoding = 'utf-8-sig')
+df.to_csv('news.csv', encoding = 'utf-8-sig',index = False)
+df.to_excel('news.xlsx',index = False)
 print(df)
